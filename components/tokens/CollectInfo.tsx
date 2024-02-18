@@ -1,14 +1,10 @@
 "use client";
-import { FaTwitter } from "react-icons/fa";
-import { SiDiscord, SiReddit, SiTelegram } from "react-icons/si";
-
-import TestimonialTooltip from "@/app/TestimonialTooltip/page";
 import logoCollect from "@/public/logoCollect.png";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
-function page() {
+const CollectInfo = () => {
   return (
     <motion.div
       initial={{ y: 10, opacity: 0 }}
@@ -69,12 +65,9 @@ function page() {
                 <h3 className="text-xs ">Creator earnings</h3>
                 <h3 className="text-xs font-RubikExtraBold">0.005994 ETH</h3>
               </div>
-              <div className="border border-neutral-700 my-5" />
-
-              <div className="flex items-center justify-center gap-x-2">
-                <TestimonialTooltip />
-              </div>
             </div>
+            <div className="border border-neutral-700 my-5" />
+            <button className="w-full h-10 bg-main bg-[#ff4c8b] rounded-lg hover:shadow">Mint Now on Zora</button>
           </div>
         </div>
       </div>
@@ -82,4 +75,4 @@ function page() {
   );
 }
 
-export default page;
+export default CollectInfo;
