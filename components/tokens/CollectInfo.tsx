@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
-const CollectInfo = () => {
+const CollectInfo = ({ data, id }: { data: any, id?: string }) => {
   return (
     <motion.div
       initial={{ y: 10, opacity: 0 }}
@@ -24,7 +24,7 @@ const CollectInfo = () => {
         <div>
           <div className="bg-main-opacity min-w-min rounded-lg p-4 border border-neutral-800 h-fit">
             <h2 className="font-RubikBold text-lg text-neutral-200">
-              Alchemist 4.0 - Characters
+              {data?.nft_data.external_data.name}
             </h2>
             <div className="flex justify-between items-center">
               <div className="flex items-center gap-2">
@@ -51,7 +51,6 @@ const CollectInfo = () => {
               for a limited time for version Alchemist 4.0.
             </p>
             <div className="border border-neutral-700 my-5" />
-
             <div className="text-neutral-200 flex flex-col gap-4">
               <div className="flex items-center justify-between  rounded-md ">
                 <h3 className="text-xs ">Contract Address</h3>
@@ -67,7 +66,7 @@ const CollectInfo = () => {
               </div>
             </div>
             <div className="border border-neutral-700 my-5" />
-            <button className="w-full h-10 bg-main bg-[#ff4c8b] rounded-lg hover:shadow">Mint Now on Zora</button>
+            <Link href={`https://zora.co/collect/zora:0xfeee3700698f8d75bcc18e009022c7b44d2af44f/${id}`} target="_blank"><button className="w-full text-neutral-50 h-10 bg-main bg-[#ff4c8b] rounded-lg hover:shadow">Mint Now on Zora</button></Link>
           </div>
         </div>
       </div>

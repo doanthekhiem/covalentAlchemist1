@@ -10,7 +10,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="bg-[#000426]">
-        <Analytics />
         <Theming>
           <div className="sticky top-0 z-50 border-b border-[#58585f]">
             <div className=" ">
@@ -24,6 +23,15 @@ export default function RootLayout({ children }) {
             </div>
           </div>
           {children}
+          <div className=" border-b border-[#58585f]">
+            <div className=" ">
+              <div className="">
+                <div className="bg-[#000426] text-white backdrop-blur-md h-[70px]  w-full flex items-center px-10">
+                  Powered by Covalent API
+                </div>
+              </div>
+            </div>
+          </div>
         </Theming>
       </body>
     </html>

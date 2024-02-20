@@ -7,7 +7,6 @@ import CollectInfo from "./CollectInfo";
 
 const TokenDetail = ({ id }) => {
     const { dataNft, sizeNft, loading, totalView } = useNftCollectionById(id);
-    console.log(dataNft);
     return <div>
         <motion.div
             initial={{ y: 10, opacity: 0 }}
@@ -20,8 +19,8 @@ const TokenDetail = ({ id }) => {
         >
             <div className="max-w-[78rem] mx-auto ">
                 <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1fr_450px] py-4">
-                    <DetailImage url={dataNft[0]?.nft_data.external_data.animation_url} />
-                    <CollectInfo />
+                    <DetailImage loading={loading} url={dataNft[0]?.nft_data.external_data.animation_url} />
+                    <CollectInfo data={dataNft?.[0]} id={id} />
                 </div>
             </div>
         </motion.div >

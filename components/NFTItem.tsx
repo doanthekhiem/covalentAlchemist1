@@ -6,7 +6,7 @@ const NFTItem = ({ item }: any) => {
     return (
         <div
             className="max-w-sm overflow-hidden border border-[#58585fbb] rounded-lg shadow  dark:border-gray-700 text-neutral-200 hover:shadow-lg hover:scale-105 duration-100">
-            <Link href={"/tokens/1"} target="_blank">
+            <Link href={`/tokens/${Number(item.nft_data.token_id)}`} target="_blank">
                 <Image className="rounded-t-lg object-cover max-h-[213px]" width={262} height={250} src={item.nft_data.external_data.image}
                     alt={item.nft_data.external_data.name} />
             </Link>
